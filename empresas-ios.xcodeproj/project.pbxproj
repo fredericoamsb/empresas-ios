@@ -9,12 +9,27 @@
 /* Begin PBXBuildFile section */
 		4A43EB05250F378E00A755E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB04250F378E00A755E8 /* AppDelegate.swift */; };
 		4A43EB07250F378E00A755E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB06250F378E00A755E8 /* SceneDelegate.swift */; };
-		4A43EB09250F378E00A755E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB08250F378E00A755E8 /* ContentView.swift */; };
 		4A43EB0B250F379000A755E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB0A250F379000A755E8 /* Assets.xcassets */; };
 		4A43EB0E250F379000A755E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB0D250F379000A755E8 /* Preview Assets.xcassets */; };
 		4A43EB11250F379000A755E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB0F250F379000A755E8 /* LaunchScreen.storyboard */; };
 		4A43EB1C250F379000A755E8 /* empresas_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB1B250F379000A755E8 /* empresas_iosTests.swift */; };
 		4A43EB27250F379000A755E8 /* empresas_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB26250F379000A755E8 /* empresas_iosUITests.swift */; };
+		4A43EB3A250F3DC800A755E8 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB39250F3DC800A755E8 /* APIConfig.swift */; };
+		4A43EB3C250F3E2C00A755E8 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB3B250F3E2C00A755E8 /* LoginService.swift */; };
+		4A43EB3E250F3F8D00A755E8 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB3D250F3F8D00A755E8 /* Credentials.swift */; };
+		4A43EB40250F439800A755E8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB3F250F439800A755E8 /* LoginView.swift */; };
+		4A43EB42250F464B00A755E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB41250F464B00A755E8 /* LoginViewModel.swift */; };
+		4A43EB45250F4AB700A755E8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB44250F4AB700A755E8 /* Color.swift */; };
+		4A43EB4C250F68DA00A755E8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB4B250F68DA00A755E8 /* HeaderView.swift */; };
+		4A43EB56250FB1CF00A755E8 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB52250FB1CE00A755E8 /* Rubik-Medium.ttf */; };
+		4A43EB57250FB1CF00A755E8 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB53250FB1CE00A755E8 /* Rubik-Bold.ttf */; };
+		4A43EB58250FB1CF00A755E8 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB54250FB1CE00A755E8 /* Rubik-Light.ttf */; };
+		4A43EB59250FB1CF00A755E8 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB55250FB1CF00A755E8 /* Rubik-Regular.ttf */; };
+		4A43EB5E250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB5D250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift */; };
+		4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */; };
+		4A43EB65250FE65400A755E8 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB64250FE65400A755E8 /* LoaderView.swift */; };
+		4A43EB67250FEF9400A755E8 /* SmallSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */; };
+		4A43EB69250FFB9700A755E8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB68250FFB9700A755E8 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +53,6 @@
 		4A43EB01250F378E00A755E8 /* empresas-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "empresas-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A43EB04250F378E00A755E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A43EB06250F378E00A755E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4A43EB08250F378E00A755E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A43EB0A250F379000A755E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A43EB0D250F379000A755E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A43EB10250F379000A755E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +63,22 @@
 		4A43EB22250F379000A755E8 /* empresas-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "empresas-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A43EB26250F379000A755E8 /* empresas_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empresas_iosUITests.swift; sourceTree = "<group>"; };
 		4A43EB28250F379000A755E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A43EB39250F3DC800A755E8 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		4A43EB3B250F3E2C00A755E8 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		4A43EB3D250F3F8D00A755E8 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		4A43EB3F250F439800A755E8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4A43EB41250F464B00A755E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A43EB44250F4AB700A755E8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4A43EB4B250F68DA00A755E8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		4A43EB52250FB1CE00A755E8 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		4A43EB53250FB1CE00A755E8 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		4A43EB54250FB1CE00A755E8 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		4A43EB55250FB1CF00A755E8 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		4A43EB5D250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleWithRoundedBottomBorderShape.swift; sourceTree = "<group>"; };
+		4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSemiArcShape.swift; sourceTree = "<group>"; };
+		4A43EB64250FE65400A755E8 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSemiArcShape.swift; sourceTree = "<group>"; };
+		4A43EB68250FFB9700A755E8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +131,13 @@
 			children = (
 				4A43EB04250F378E00A755E8 /* AppDelegate.swift */,
 				4A43EB06250F378E00A755E8 /* SceneDelegate.swift */,
-				4A43EB08250F378E00A755E8 /* ContentView.swift */,
+				4A43EB43250F4A9900A755E8 /* Extensions */,
+				4A43EB38250F3D9600A755E8 /* Helpers */,
+				4A43EB37250F3A7B00A755E8 /* Services */,
+				4A43EB36250F3A5700A755E8 /* Models */,
+				4A43EB35250F3A4400A755E8 /* ViewModels */,
+				4A43EB34250F3A3900A755E8 /* Views */,
+				4A43EB4D250FB15900A755E8 /* Fonts */,
 				4A43EB0A250F379000A755E8 /* Assets.xcassets */,
 				4A43EB0F250F379000A755E8 /* LaunchScreen.storyboard */,
 				4A43EB12250F379000A755E8 /* Info.plist */,
@@ -134,6 +170,95 @@
 				4A43EB28250F379000A755E8 /* Info.plist */,
 			);
 			path = "empresas-iosUITests";
+			sourceTree = "<group>";
+		};
+		4A43EB34250F3A3900A755E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB5C250FDC3400A755E8 /* Shapes */,
+				4A43EB63250FE62200A755E8 /* Globals */,
+				4A43EB46250F4E8B00A755E8 /* LoginPage */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A43EB35250F3A4400A755E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB41250F464B00A755E8 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A43EB36250F3A5700A755E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB3D250F3F8D00A755E8 /* Credentials.swift */,
+				4A43EB68250FFB9700A755E8 /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A43EB37250F3A7B00A755E8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB3B250F3E2C00A755E8 /* LoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A43EB38250F3D9600A755E8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB39250F3DC800A755E8 /* APIConfig.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4A43EB43250F4A9900A755E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB44250F4AB700A755E8 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A43EB46250F4E8B00A755E8 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB4B250F68DA00A755E8 /* HeaderView.swift */,
+				4A43EB3F250F439800A755E8 /* LoginView.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		4A43EB4D250FB15900A755E8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB53250FB1CE00A755E8 /* Rubik-Bold.ttf */,
+				4A43EB54250FB1CE00A755E8 /* Rubik-Light.ttf */,
+				4A43EB52250FB1CE00A755E8 /* Rubik-Medium.ttf */,
+				4A43EB55250FB1CF00A755E8 /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4A43EB5C250FDC3400A755E8 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB5D250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift */,
+				4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */,
+				4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		4A43EB63250FE62200A755E8 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				4A43EB64250FE65400A755E8 /* LoaderView.swift */,
+			);
+			path = Globals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +366,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A43EB11250F379000A755E8 /* LaunchScreen.storyboard in Resources */,
+				4A43EB59250FB1CF00A755E8 /* Rubik-Regular.ttf in Resources */,
+				4A43EB58250FB1CF00A755E8 /* Rubik-Light.ttf in Resources */,
 				4A43EB0E250F379000A755E8 /* Preview Assets.xcassets in Resources */,
 				4A43EB0B250F379000A755E8 /* Assets.xcassets in Resources */,
+				4A43EB56250FB1CF00A755E8 /* Rubik-Medium.ttf in Resources */,
+				4A43EB57250FB1CF00A755E8 /* Rubik-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +396,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A43EB5E250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift in Sources */,
+				4A43EB67250FEF9400A755E8 /* SmallSemiArcShape.swift in Sources */,
+				4A43EB3E250F3F8D00A755E8 /* Credentials.swift in Sources */,
+				4A43EB65250FE65400A755E8 /* LoaderView.swift in Sources */,
+				4A43EB40250F439800A755E8 /* LoginView.swift in Sources */,
+				4A43EB4C250F68DA00A755E8 /* HeaderView.swift in Sources */,
+				4A43EB69250FFB9700A755E8 /* LoginResponse.swift in Sources */,
 				4A43EB05250F378E00A755E8 /* AppDelegate.swift in Sources */,
 				4A43EB07250F378E00A755E8 /* SceneDelegate.swift in Sources */,
-				4A43EB09250F378E00A755E8 /* ContentView.swift in Sources */,
+				4A43EB42250F464B00A755E8 /* LoginViewModel.swift in Sources */,
+				4A43EB45250F4AB700A755E8 /* Color.swift in Sources */,
+				4A43EB3C250F3E2C00A755E8 /* LoginService.swift in Sources */,
+				4A43EB3A250F3DC800A755E8 /* APIConfig.swift in Sources */,
+				4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
