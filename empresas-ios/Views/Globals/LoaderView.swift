@@ -16,11 +16,11 @@ struct LoaderView: View {
         GeometryReader { view in
             ZStack {
                 LargeSemiArcShape(x: view.size.width/2, y: view.size.height/2)
-                    .fill(Color(0xFBDBE7))
+                    .fill(Color(Theme.pink2))
                     .rotationEffect(Angle.init(degrees: self.largeArcAngle))
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
                 SmallSemiArcShape(x: view.size.width/2, y: view.size.height/2)
-                    .fill(Color(0xFBDBE7))
+                    .fill(Color(Theme.pink2))
                     .rotationEffect(Angle.init(degrees: self.smallArcAngle))
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
             }

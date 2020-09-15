@@ -10,14 +10,21 @@ import Foundation
 
 class LoginService {
     
-    func login (email:String, password:String, success: @escaping (LoginResponse?) -> Void, error: @escaping (Error?) -> Void) {
+    static func login (email:String, password:String, callback: @escaping (LoginResponse?, Error?) -> Void) {
         
         guard let url = URL(string: "\(APIConfig.url)/users/auth/sign_in") else {return}
         
-        let user: Credentials
+        var data: [String:Any] = [String:Any]()
+        
+        data = [
+            "email": email,
+            "password": password
+        ]
+        
+        print(data)
         
         do {
-            let data = try JSONSerialization.data(withJSONObject: self.user, options: [])
+            let data = try JSONSerialization.data(withJSONObject: data, options: [])
             
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -27,12 +34,14 @@ class LoginService {
 
             let task = URLSession.shared.dataTask(with: request)
             task.resume()
-
+            print(data)
             let response: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-            success(response)
-            
+            callback(response, nil)
+
+            print(response)
         } catch let err {
-            error(err)
+            print(err)
+            callback(nil, err)
             return
         }
     }

@@ -29,7 +29,9 @@
 		4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */; };
 		4A43EB65250FE65400A755E8 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB64250FE65400A755E8 /* LoaderView.swift */; };
 		4A43EB67250FEF9400A755E8 /* SmallSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */; };
-		4A43EB69250FFB9700A755E8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB68250FFB9700A755E8 /* LoginResponse.swift */; };
+		4AC308EB25106FA800320E72 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC308EA25106FA800320E72 /* LoginResponse.swift */; };
+		4AC308ED2510796D00320E72 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC308EC2510796D00320E72 /* Theme.swift */; };
+		4AC76193251034DD00D26901 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC76192251034DD00D26901 /* FormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +80,9 @@
 		4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSemiArcShape.swift; sourceTree = "<group>"; };
 		4A43EB64250FE65400A755E8 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSemiArcShape.swift; sourceTree = "<group>"; };
-		4A43EB68250FFB9700A755E8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4AC308EA25106FA800320E72 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4AC308EC2510796D00320E72 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4AC76192251034DD00D26901 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +197,8 @@
 		4A43EB36250F3A5700A755E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4AC308EA25106FA800320E72 /* LoginResponse.swift */,
 				4A43EB3D250F3F8D00A755E8 /* Credentials.swift */,
-				4A43EB68250FFB9700A755E8 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4A43EB39250F3DC800A755E8 /* APIConfig.swift */,
+				4AC308EC2510796D00320E72 /* Theme.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4A43EB4B250F68DA00A755E8 /* HeaderView.swift */,
+				4AC76192251034DD00D26901 /* FormView.swift */,
 				4A43EB3F250F439800A755E8 /* LoginView.swift */,
 			);
 			path = LoginPage;
@@ -402,14 +408,16 @@
 				4A43EB65250FE65400A755E8 /* LoaderView.swift in Sources */,
 				4A43EB40250F439800A755E8 /* LoginView.swift in Sources */,
 				4A43EB4C250F68DA00A755E8 /* HeaderView.swift in Sources */,
-				4A43EB69250FFB9700A755E8 /* LoginResponse.swift in Sources */,
 				4A43EB05250F378E00A755E8 /* AppDelegate.swift in Sources */,
 				4A43EB07250F378E00A755E8 /* SceneDelegate.swift in Sources */,
 				4A43EB42250F464B00A755E8 /* LoginViewModel.swift in Sources */,
+				4AC308ED2510796D00320E72 /* Theme.swift in Sources */,
 				4A43EB45250F4AB700A755E8 /* Color.swift in Sources */,
 				4A43EB3C250F3E2C00A755E8 /* LoginService.swift in Sources */,
+				4AC76193251034DD00D26901 /* FormView.swift in Sources */,
 				4A43EB3A250F3DC800A755E8 /* APIConfig.swift in Sources */,
 				4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */,
+				4AC308EB25106FA800320E72 /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

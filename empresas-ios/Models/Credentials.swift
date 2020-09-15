@@ -6,10 +6,7 @@
 //  Copyright © 2020 Frederico Augusto. All rights reserved.
 //
 
-import Foundation
-
 struct Credentials: Decodable {
-    let id: Int
-    let name: String
-    let enterprise: String
+    let email: String
+    let password: String
 }

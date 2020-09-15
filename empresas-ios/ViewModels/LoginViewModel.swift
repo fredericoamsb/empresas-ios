@@ -8,22 +8,28 @@
 
 import Foundation
 
-class LoginViewModel: ObservableObject{
+class LoginViewModel: ObservableObject {
     
-    @Published var username: String = ""
+    @Published var email: String = ""
     @Published var password: String = ""
-    @Published private(set) var showPassword = false
-    @Published private(set) var isLoading = false
+    @Published private(set) var showPassword: Bool = false
+    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var hasError: Bool = false
     
     func togglePasswordVisibility () -> Void {
         self.showPassword = !self.showPassword
     }
     
-    func startLoading () -> Void {
+    func login () -> Void {
         self.isLoading = true
-    }
-    
-    func stopLoading () -> Void {
+        LoginService.login(email: self.email, password: self.password) { (response, err) in
         self.isLoading = false
+            if (response != nil) {
+                self.hasError = false;
+                print("navigate to next page")
+            } else {
+                self.hasError = true
+            }
+        }
     }
 }

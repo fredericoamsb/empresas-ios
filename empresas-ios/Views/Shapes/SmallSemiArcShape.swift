@@ -24,7 +24,7 @@ struct SmallSemiArcShape: Shape {
 struct SmallSemiArcShape_Previews: PreviewProvider {
     static var previews: some View {
         SmallSemiArcShape(x: 100, y: 100)
-            .fill(Color(0xFBDBE7))
+            .fill(Color(Theme.pink2))
             .previewLayout(.fixed(width: 200, height: 200))
     }
 }

@@ -10,19 +10,54 @@ import SwiftUI
 
 struct HeaderView : View {
     
-    let height: CGFloat
+    private let height: CGFloat = 235
     let width: CGFloat
     
+    @State private var offsetY: CGFloat = 0
+    @State private var showTitle: Bool = true
+    
     var body: some View {
-        RectangleWithRoundedBottomBorderShape(width: width, height: height)
-            .fill(LinearGradient(gradient: Gradient(colors: [.init(0xA489A8), .init(0xB21780), .init(0xAC2295)]), startPoint: .bottomLeading, endPoint: .topTrailing))
-            .frame(width: width, height: height)
+        ZStack {
+            VStack {
+                RectangleWithRoundedBottomBorderShape(width: width, height: height)
+                .fill(LinearGradient(gradient: Gradient(colors: [.init(Theme.gradientPink1), .init(Theme.gradientPink2), .init(Theme.gradientPink3)]), startPoint: .bottomLeading, endPoint: .topTrailing))
+                .frame(width: width, height: height)
+            }
+            .padding(.top, offsetY)
+            
+            VStack {
+                Image("iosys-icon")
+                
+                if(showTitle) {
+                    Spacer().frame(height: 16)
+                    
+                    Text("Seja bem vindo ao empresa!")
+                        .font(.custom("Rubik Regular", size: 20))
+                        .foregroundColor(Color.white)
+                }
+            }
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    self.offsetY = -100
+                    self.showTitle = false
+                }
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    self.offsetY = 0
+                    self.showTitle = true
+                }
+            }
+        }
     }
 }
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(height: 200, width: 300)
+        HeaderView(width: 300)
             .previewLayout(.fixed(width: 300, height: 200))
     }
 }
