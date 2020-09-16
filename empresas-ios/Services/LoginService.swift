@@ -10,40 +10,43 @@ import Foundation
 
 class LoginService {
     
-    static func login (email:String, password:String, callback: @escaping (LoginResponse?, Error?) -> Void) {
+    static func login (email: String, password: String, callback: @escaping (LoginResponse?, Error?) -> Void) {
         
-        guard let url = URL(string: "\(APIConfig.url)/users/auth/sign_in") else {return}
-        
-        var data: [String:Any] = [String:Any]()
-        
-        data = [
+        let json: [String: String] = [
             "email": email,
             "password": password
         ]
         
-        print(data)
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
-        do {
-            let data = try JSONSerialization.data(withJSONObject: data, options: [])
+        let url = URL(string: "\(APIConfig.url)/users/auth/sign_in")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-type")
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                callback(nil, error)
+                return
+            }
             
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = data
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-            let task = URLSession.shared.dataTask(with: request)
-            task.resume()
-            print(data)
-            let response: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-            callback(response, nil)
-
-            print(response)
-        } catch let err {
-            print(err)
-            callback(nil, err)
-            return
+            do {
+                let httpResponse = response as! HTTPURLResponse
+                guard let uid = httpResponse.allHeaderFields["uid"] as? String else { return }
+                guard let client = httpResponse.allHeaderFields["client"] as? String else { return }
+                guard let accessToken = httpResponse.allHeaderFields["access-token"] as? String else { return }
+                
+                LocalStorage.saveSession(dict: ["uid": uid, "client": client, "access-token": accessToken])
+                
+                let responseData: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                callback(responseData, nil)
+            } catch let err {
+                callback(nil, err)
+                return
+            }
         }
+        
+        task.resume()
     }
-    
 }

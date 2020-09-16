@@ -24,7 +24,7 @@ struct LoginView: View {
                 }
                 
                 if self.viewModel.isLoading {
-                    LoaderView()
+                    LoadingView()
                 }
             }
         }

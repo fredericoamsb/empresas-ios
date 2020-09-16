@@ -23,12 +23,16 @@ class LoginViewModel: ObservableObject {
     func login () -> Void {
         self.isLoading = true
         LoginService.login(email: self.email, password: self.password) { (response, err) in
-        self.isLoading = false
-            if (response != nil) {
-                self.hasError = false;
-                print("navigate to next page")
-            } else {
-                self.hasError = true
+            DispatchQueue.main.async {
+                self.isLoading = false
+                if (response?.success == true) {
+                    self.hasError = false;
+                    
+//                    LocalStorage.saveSession(dict: <#T##[String : String]?#>)
+                    
+                } else {
+                    self.hasError = true
+                }
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct APIConfig {
+class APIConfig {
     static let host = "https://empresas.ioasys.com.br"
     static let apiVersion = "v1"
     static let url = "\(host)/api/\(apiVersion)/"

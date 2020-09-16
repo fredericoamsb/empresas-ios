@@ -6,7 +6,8 @@
 //  Copyright © 2020 Frederico Augusto. All rights reserved.
 //
 
-struct Credentials: Decodable {
-    let email: String
-    let password: String
+struct Credentials: Hashable, Decodable {
+    let uid: String?
+    let client: String?
+    let accessToken: String?
 }

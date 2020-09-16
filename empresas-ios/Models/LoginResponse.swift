@@ -7,6 +7,6 @@
 //
 
 struct LoginResponse: Decodable {
-    let success: Bool
+    let success: Bool?
     let enterprise: String?
 }

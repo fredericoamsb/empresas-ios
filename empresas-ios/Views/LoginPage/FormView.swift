@@ -21,6 +21,7 @@ struct FormView: View {
                     .foregroundColor(Color(Theme.gray3))
                 HStack {
                     TextField("", text: self.$viewModel.email)
+                        .keyboardType(.emailAddress)
                     if (self.viewModel.hasError) {
                         Image("error-icon")
                             .foregroundColor(Color(Theme.gray3))

@@ -1,5 +1,5 @@
 //
-//  LoaderView.swift
+//  LoadingView.swift
 //  empresas-ios
 //
 //  Created by Frederico Augusto on 14/09/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LoaderView: View {
+struct LoadingView: View {
     @State private var largeArcAngle: Double = 0
     @State private var smallArcAngle: Double = 360
     
@@ -34,8 +34,8 @@ struct LoaderView: View {
     }
 }
 
-struct LoaderView_Previews: PreviewProvider {
+struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoaderView()
+        LoadingView()
     }
 }
