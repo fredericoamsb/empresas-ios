@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel: ContentViewModel
+    @EnvironmentObject var viewModel: BaseViewModel
     
     var body: some View {
         Group {
@@ -25,6 +25,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: ContentViewModel())
+        ContentView()
     }
 }

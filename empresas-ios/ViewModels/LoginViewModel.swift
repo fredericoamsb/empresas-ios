@@ -20,16 +20,15 @@ class LoginViewModel: ObservableObject {
         self.showPassword = !self.showPassword
     }
     
-    func login () -> Void {
+    func login (baseViewModel: BaseViewModel) -> Void {
         self.isLoading = true
+        
         LoginService.login(email: self.email, password: self.password) { (response, err) in
             DispatchQueue.main.async {
                 self.isLoading = false
                 if (response?.success == true) {
                     self.hasError = false;
-                    
-//                    LocalStorage.saveSession(dict: <#T##[String : String]?#>)
-                    
+                    baseViewModel.isAuth = true;
                 } else {
                     self.hasError = true
                 }

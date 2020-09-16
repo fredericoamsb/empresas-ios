@@ -15,10 +15,6 @@ class SearchViewModel: ObservableObject {
     @Published private(set) var count: Int = 0
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var Enterprises: [Enterprise] = []
-    
-    init () {
-        self.filter()
-    }
 
     func filter () -> Void {
         self.isLoading = true

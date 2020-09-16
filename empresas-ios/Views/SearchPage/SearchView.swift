@@ -29,7 +29,7 @@ struct SearchView: View {
                                     .foregroundColor(Color(Theme.gray3))
                                 Spacer(minLength: 15)
                                 TextField("Pesquise por empresa", text: self.$viewModel.search) {
-                                    print(self.viewModel.search)
+                                    self.viewModel.filter()
                                 }
                             }
                             .font(.custom("Rubik Light", size: 18))

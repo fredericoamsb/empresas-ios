@@ -10,6 +10,8 @@ import SwiftUI
 
 struct FormView: View {
     
+    @EnvironmentObject var baseViewModel: BaseViewModel
+    
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
@@ -80,7 +82,7 @@ struct FormView: View {
                     .frame(height: 40)
                 
                 Button(action: {
-                    self.viewModel.login()
+                    self.viewModel.login(baseViewModel: self.baseViewModel)
                 }) {
                     Text("ENTRAR")
                         .font(.custom("Rubik Medium", size: 16))

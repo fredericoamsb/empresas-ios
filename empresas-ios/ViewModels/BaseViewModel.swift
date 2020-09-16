@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ContentViewModel: ObservableObject {
+class BaseViewModel: ObservableObject {
     
-    @Published private(set) var isAuth: Bool = false
+    @Published var isAuth: Bool = false
     
     init() {
         self.isAuth = LocalStorage.getSession() != nil
