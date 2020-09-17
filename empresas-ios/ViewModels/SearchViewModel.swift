@@ -32,20 +32,20 @@ class SearchViewModel: ObservableObject {
         
         self.isLoading = true
         
-        EnterprisesService.filter(name: self.search) { (enterprisesResponse, statusCode, err) in
+        EnterprisesService.filter(name: self.search) { (searched, enterprisesResponse, statusCode, err) in
             DispatchQueue.main.async {
+                self.isLoading = false
+
                 if (statusCode == 401) {
                     LocalStorage.clear()
                     self.baseViewModel.isAuth = false
                     return
                 }
                 
-                self.isLoading = false
-                self.enterprises = enterprisesResponse?.enterprises ?? []
-                self.count = self.enterprises.count
-                
-                if (self.count == 0) {
-                    self.notFound = true
+                if (self.search == searched) {
+                    self.enterprises = enterprisesResponse?.enterprises ?? []
+                    self.count = self.enterprises.count
+                    self.notFound = self.count == 0
                 }
             }
         }

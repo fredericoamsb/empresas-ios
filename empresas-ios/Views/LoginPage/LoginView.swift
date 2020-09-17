@@ -22,12 +22,9 @@ struct LoginView: View {
                     
                     FormView(viewModel: self.viewModel)
                 }
-                
-                if self.viewModel.isLoading {
-                    LoadingView()
-                }
             }
         }
+        .overlay(self.viewModel.isLoading ? LoadingOverlayView() : nil)
         .edgesIgnoringSafeArea(.top)
     }
     

@@ -15,7 +15,7 @@ struct SmallSemiArcShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        path.addArc(center: CGPoint(x: x, y: y), radius: 47, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: true)
+        path.addArc(center: CGPoint(x: x, y: y), radius: 23, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: true)
 
         return path.strokedPath(.init(lineWidth: 3))
     }
@@ -23,8 +23,8 @@ struct SmallSemiArcShape: Shape {
 
 struct SmallSemiArcShape_Previews: PreviewProvider {
     static var previews: some View {
-        SmallSemiArcShape(x: 100, y: 100)
+        SmallSemiArcShape(x: 50, y: 50)
             .fill(Color(Theme.pink2))
-            .previewLayout(.fixed(width: 200, height: 200))
+            .previewLayout(.fixed(width: 100, height: 100))
     }
 }

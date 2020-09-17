@@ -27,7 +27,7 @@
 		4A43EB59250FB1CF00A755E8 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A43EB55250FB1CF00A755E8 /* Rubik-Regular.ttf */; };
 		4A43EB5E250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB5D250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift */; };
 		4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */; };
-		4A43EB65250FE65400A755E8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB64250FE65400A755E8 /* LoadingView.swift */; };
+		4A43EB65250FE65400A755E8 /* LoadingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB64250FE65400A755E8 /* LoadingOverlayView.swift */; };
 		4A43EB67250FEF9400A755E8 /* SmallSemiArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */; };
 		4A663E3425115D75004B9FC7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E3325115D74004B9FC7 /* LoginResponse.swift */; };
 		4A663E3725118586004B9FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E3625118586004B9FC7 /* ContentView.swift */; };
@@ -44,6 +44,7 @@
 		4A663E502512F55A004B9FC7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E4F2512F55A004B9FC7 /* ImageView.swift */; };
 		4A663E522512FB3E004B9FC7 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E512512FB3E004B9FC7 /* SearchHeaderView.swift */; };
 		4A663E54251302FF004B9FC7 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E53251302FF004B9FC7 /* HostingController.swift */; };
+		4A663E5625131847004B9FC7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A663E5525131847004B9FC7 /* LoadingView.swift */; };
 		4AC308ED2510796D00320E72 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC308EC2510796D00320E72 /* Theme.swift */; };
 		4AC76193251034DD00D26901 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC76192251034DD00D26901 /* FormView.swift */; };
 /* End PBXBuildFile section */
@@ -92,7 +93,7 @@
 		4A43EB55250FB1CF00A755E8 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		4A43EB5D250FDC4D00A755E8 /* RectangleWithRoundedBottomBorderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleWithRoundedBottomBorderShape.swift; sourceTree = "<group>"; };
 		4A43EB5F250FDC9600A755E8 /* LargeSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSemiArcShape.swift; sourceTree = "<group>"; };
-		4A43EB64250FE65400A755E8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4A43EB64250FE65400A755E8 /* LoadingOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlayView.swift; sourceTree = "<group>"; };
 		4A43EB66250FEF9400A755E8 /* SmallSemiArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSemiArcShape.swift; sourceTree = "<group>"; };
 		4A663E3325115D74004B9FC7 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		4A663E3625118586004B9FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		4A663E4F2512F55A004B9FC7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		4A663E512512FB3E004B9FC7 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		4A663E53251302FF004B9FC7 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		4A663E5525131847004B9FC7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4AC308EC2510796D00320E72 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4AC76192251034DD00D26901 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,8 +303,9 @@
 		4A43EB63250FE62200A755E8 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				4A43EB64250FE65400A755E8 /* LoadingView.swift */,
+				4A43EB64250FE65400A755E8 /* LoadingOverlayView.swift */,
 				4A663E4F2512F55A004B9FC7 /* ImageView.swift */,
+				4A663E5525131847004B9FC7 /* LoadingView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -459,7 +462,7 @@
 				4A663E4E2512F4E0004B9FC7 /* ImageViewModel.swift in Sources */,
 				4A43EB67250FEF9400A755E8 /* SmallSemiArcShape.swift in Sources */,
 				4A43EB3E250F3F8D00A755E8 /* Credentials.swift in Sources */,
-				4A43EB65250FE65400A755E8 /* LoadingView.swift in Sources */,
+				4A43EB65250FE65400A755E8 /* LoadingOverlayView.swift in Sources */,
 				4A663E442511A6F5004B9FC7 /* EnterpriseType.swift in Sources */,
 				4A663E3C251186D1004B9FC7 /* SearchViewModel.swift in Sources */,
 				4A43EB40250F439800A755E8 /* LoginView.swift in Sources */,
@@ -481,6 +484,7 @@
 				4AC76193251034DD00D26901 /* FormView.swift in Sources */,
 				4A43EB3A250F3DC800A755E8 /* APIConfig.swift in Sources */,
 				4A663E422511A574004B9FC7 /* Enterprise.swift in Sources */,
+				4A663E5625131847004B9FC7 /* LoadingView.swift in Sources */,
 				4A43EB60250FDC9600A755E8 /* LargeSemiArcShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

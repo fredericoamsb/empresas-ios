@@ -12,15 +12,12 @@ struct SearchHeaderView: View {
     
     @ObservedObject var viewModel: SearchViewModel
     
-    @State var height: CGFloat = 188
+    @State private var height: CGFloat = 188
     
     let width: CGFloat
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.init(Theme.gradientPink1), .init(Theme.gradientPink2), .init(Theme.gradientPink3)]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                .frame(width: self.width, height: 188)
-            
             VStack {
                 Spacer()
                 
@@ -28,9 +25,12 @@ struct SearchHeaderView: View {
                     Image("search-icon")
                         .foregroundColor(Color(Theme.gray3))
                     Spacer(minLength: 15)
-                    TextField("Pesquise por empresa", text: self.$viewModel.search) {
-                        self.viewModel.filter()
-                    }
+                    TextField("Pesquise por empresa", text: Binding<String>(
+                        get: { self.viewModel.search },
+                        set: {
+                            self.viewModel.search = $0
+                            self.viewModel.filter()
+                    }))
                 }
                 .font(.custom("Rubik Light", size: 18))
                 .accentColor(Color(Theme.pink1))
@@ -41,19 +41,23 @@ struct SearchHeaderView: View {
                 .offset(y: 25)
             }
         }
-        .frame(width: self.width, height: self.height)
-        .onAppear {
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    self.height = 67
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.init(Theme.gradientPink1), .init(Theme.gradientPink2), .init(Theme.gradientPink3)]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                .frame(width: self.width)
+        )
+            .frame(width: self.width, height: self.height)
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        self.height = 120
+                    }
                 }
-            }
-            
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    self.height = 188
+                
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        self.height = 188
+                    }
                 }
-            }
         }
     }
 }

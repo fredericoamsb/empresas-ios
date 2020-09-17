@@ -15,7 +15,7 @@ struct LargeSemiArcShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        path.addArc(center: CGPoint(x: x, y: y), radius: 72, startAngle: .degrees(180), endAngle: .degrees(270), clockwise: true)
+        path.addArc(center: CGPoint(x: x, y: y), radius: 36, startAngle: .degrees(180), endAngle: .degrees(270), clockwise: true)
 
         return path.strokedPath(.init(lineWidth: 3))
     }
@@ -23,8 +23,8 @@ struct LargeSemiArcShape: Shape {
 
 struct LargeSemiArcShape_Previews: PreviewProvider {
     static var previews: some View {
-        LargeSemiArcShape(x: 100, y: 100)
+        LargeSemiArcShape(x: 50, y: 50)
             .fill(Color(Theme.pink2))
-        .previewLayout(.fixed(width: 200, height: 200))
+        .previewLayout(.fixed(width: 100, height: 100))
     }
 }

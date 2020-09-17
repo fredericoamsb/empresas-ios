@@ -10,7 +10,7 @@ import Foundation
 
 class EnterprisesService {
     
-    static func filter (name: String, callback: @escaping (EnterprisesResponse?, Int?, Error?) -> Void) {
+    static func filter (name: String, callback: @escaping (String, EnterprisesResponse?, Int?, Error?) -> Void) {
         
         let url = URL(string: "\(APIConfig.url)/enterprises?name=\(name)")!
         
@@ -28,19 +28,19 @@ class EnterprisesService {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
 
             guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
-                callback(nil, nil, error)
+                callback(name, nil, nil, error)
                 return
             }
             
             do {
                 if (response.statusCode != 401) {
                     let enterprise: EnterprisesResponse = try JSONDecoder().decode(EnterprisesResponse.self, from: data)
-                    callback(enterprise, response.statusCode, nil)
+                    callback(name, enterprise, response.statusCode, nil)
                 } else {
-                    callback(nil, response.statusCode, nil)
+                    callback(name, nil, response.statusCode, nil)
                 }
             } catch let err {
-                callback(nil, nil, err)
+                callback(name, nil, nil, err)
                 return
             }
         }

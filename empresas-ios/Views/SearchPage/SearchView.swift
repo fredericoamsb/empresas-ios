@@ -20,7 +20,11 @@ struct SearchView: View {
                     SearchHeaderView(viewModel: self.viewModel, width: view.size.width)
                         .zIndex(1)
                     
-                    if (self.viewModel.notFound) {
+                    if(self.viewModel.isLoading) {
+                        Spacer()
+                        LoadingView()
+                        Spacer()
+                    } else if (self.viewModel.notFound) {
                         Spacer()
                         Text("Nenhum resultado encontrado")
                             .font(.custom("Rubik Light", size: 18))
