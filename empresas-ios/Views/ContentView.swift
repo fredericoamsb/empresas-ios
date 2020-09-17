@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if self.viewModel.isAuth {
-                SearchView(viewModel: SearchViewModel())
+                SearchView(viewModel: SearchViewModel(baseViewModel: viewModel))
             } else {
                 LoginView(viewModel: LoginViewModel())
             }

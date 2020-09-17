@@ -14,16 +14,39 @@ class SearchViewModel: ObservableObject {
     @Published private(set) var uid: String = "testeapple@ioasys.com.br"
     @Published private(set) var count: Int = 0
     @Published private(set) var isLoading: Bool = false
-    @Published private(set) var Enterprises: [Enterprise] = []
-
+    @Published private(set) var notFound: Bool = false
+    @Published private(set) var enterprises: [Enterprise] = []
+    
+    let baseViewModel: BaseViewModel
+    
+    init(baseViewModel: BaseViewModel) {
+        self.baseViewModel = baseViewModel
+    }
+    
     func filter () -> Void {
+        if (self.search == "") {
+            self.enterprises = []
+            self.notFound = false
+            return
+        }
+        
         self.isLoading = true
-
-        EnterprisesService.filter(name: self.search, uid: self.uid) { (response, err) in
-
+        
+        EnterprisesService.filter(name: self.search) { (enterprisesResponse, statusCode, err) in
             DispatchQueue.main.async {
+                if (statusCode == 401) {
+                    LocalStorage.clear()
+                    self.baseViewModel.isAuth = false
+                    return
+                }
+                
                 self.isLoading = false
-                self.Enterprises = response!
+                self.enterprises = enterprisesResponse?.enterprises ?? []
+                self.count = self.enterprises.count
+                
+                if (self.count == 0) {
+                    self.notFound = true
+                }
             }
         }
     }

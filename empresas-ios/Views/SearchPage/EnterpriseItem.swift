@@ -10,15 +10,29 @@ import SwiftUI
 
 struct EnterpriseItem: View {
     
-    let name: String;
+    let photo: String
+    let name: String
+    let width: CGFloat
     
     var body: some View {
-        Text(self.name)
+        ZStack {
+            ImageView(withURL: self.photo)
+            Text(self.name)
+                .font(.custom("Rubik Bold", size: 22))
+                .foregroundColor(Color.white)
+                .shadow(radius: 3)
+        }
+        .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 8, trailing: 0))
+        .frame(width: self.width - 30, height: 120, alignment: .center)
+        .background(Color.init(Theme.gray2))
+        .cornerRadius(4)
+        .foregroundColor(Color.white)
     }
 }
 
 struct EnterpriseItem_Previews: PreviewProvider {
     static var previews: some View {
-        EnterpriseItem(name: "Enterprise B")
+        EnterpriseItem(photo: "https://picsum.photos/270/120", name: "Iosys", width: 300)
+            .previewLayout(.fixed(width: 270, height: 120))
     }
 }

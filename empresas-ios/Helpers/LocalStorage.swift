@@ -13,9 +13,9 @@ class LocalStorage {
     static fileprivate let userDefaults = UserDefaults.standard
     
     static func saveSession(dict: [String: String]?) -> Void {
-        let accessToken = dict?["access-token"]
-        let client = dict?["client"]
-        let uid = dict?["uid"]
+        guard let accessToken = dict?["access-token"] else { return }
+        guard let client = dict?["client"] else { return }
+        guard let uid = dict?["uid"] else { return }
         
         userDefaults.set(accessToken, forKey: "access_token")
         userDefaults.set(client, forKey: "client")
@@ -30,11 +30,9 @@ class LocalStorage {
         return ["access-token": accessToken, "client": client, "uid": uid]
     }
     
-    static func clear() -> Bool {
-        guard let domain = Bundle.main.bundleIdentifier else { return false }
+    static func clear() -> Void {
+        guard let domain = Bundle.main.bundleIdentifier else { return }
         userDefaults.removePersistentDomain(forName: domain)
-        
-        return userDefaults.synchronize()
     }
     
 }

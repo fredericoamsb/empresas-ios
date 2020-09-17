@@ -7,11 +7,11 @@
 //
 
 struct Enterprise: Hashable, Decodable {
-    let name: String?
+    let name: String
     let enterpriseType: EnterpriseType?
     let description: String?
     let country: String?
-    let photo: String?
+    let photo: String
     
     enum CodingKeys: String, CodingKey {
         case name = "enterprise_name"
@@ -21,3 +21,4 @@ struct Enterprise: Hashable, Decodable {
         case photo
     }
 }
+

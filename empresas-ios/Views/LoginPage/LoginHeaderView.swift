@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct HeaderView : View {
+struct LoginHeaderView : View {
     
     private let height: CGFloat = 235
     let width: CGFloat
@@ -55,9 +55,9 @@ struct HeaderView : View {
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
+struct LoginHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(width: 300)
-            .previewLayout(.fixed(width: 300, height: 200))
+        LoginHeaderView(width: 300)
+            .previewLayout(.fixed(width: 300, height: 230))
     }
 }

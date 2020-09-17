@@ -16,7 +16,7 @@ struct LoginView: View {
         GeometryReader { view in
             ZStack {
                 VStack {
-                    HeaderView(width: view.size.width)
+                    LoginHeaderView(width: view.size.width)
                     
                     Spacer().frame(height: 24)
                     

@@ -17,44 +17,40 @@ struct SearchView: View {
             NavigationView {
                 
                 VStack {
-                    ZStack {
-                        LinearGradient(gradient: Gradient(colors: [.init(Theme.gradientPink1), .init(Theme.gradientPink2), .init(Theme.gradientPink3)]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                            .frame(width: view.size.width, height: 188)
-                        
-                        VStack {
-                            Spacer()
-                            
-                            HStack {
-                                Image("search-icon")
-                                    .foregroundColor(Color(Theme.gray3))
-                                Spacer(minLength: 15)
-                                TextField("Pesquise por empresa", text: self.$viewModel.search) {
-                                    self.viewModel.filter()
+                    SearchHeaderView(viewModel: self.viewModel, width: view.size.width)
+                        .zIndex(1)
+                    
+                    if (self.viewModel.notFound) {
+                        Spacer()
+                        Text("Nenhum resultado encontrado")
+                            .font(.custom("Rubik Light", size: 18))
+                            .foregroundColor(Color(Theme.gray3))
+                        Spacer()
+                    } else {
+                        List {
+                            Section() {
+                                if (self.viewModel.search != "") {
+                                    Text("\(self.viewModel.count) resultados encontrados")
+                                        .font(.custom("Rubik Light", size: 14))
+                                        .foregroundColor(Color(Theme.gray3))
+                                        .padding(.top, 30)
+                                        .padding(.bottom, 10)
                                 }
                             }
-                            .font(.custom("Rubik Light", size: 18))
-                            .accentColor(Color(Theme.pink1))
-                            .padding()
-                            .frame(width: view.size.width - 25, height: 50)
-                            .background(Color(Theme.gray1))
-                            .cornerRadius(4)
-                            .offset(y: 25)
-                        }
-                        .frame(width: view.size.width, height: 200)
-                    }
-                    .zIndex(1)
-                    
-                    List {
-                        ForEach(self.viewModel.Enterprises, id: \.self) { index in
-                            EnterpriseItem(name: self.viewModel.Enterprises[0].name!)
-                                .frame(width: view.size.width - 100, height: 188, alignment: .center)
-                                .background(Color.red)
+                            
+                            Section() {
+                                ForEach(self.viewModel.enterprises as [Enterprise], id: \.self) { enterprise in
+                                    EnterpriseItem(photo: "\(APIConfig.host)\(enterprise.photo)", name: enterprise.name, width: view.size.width)
+                                }
+                            }
+                            
+                            Spacer()
+                                .frame(width: 0, height: 30)
                         }
                     }
                 }
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
-                .zIndex(0)
                 .onAppear() {
                     UITableView.appearance().separatorStyle = .none
                 }
@@ -69,6 +65,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewModel: SearchViewModel())
+        SearchView(viewModel: SearchViewModel(baseViewModel: BaseViewModel()))
     }
 }
