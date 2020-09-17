@@ -65,6 +65,7 @@ struct SearchView: View {
                 }
                 .edgesIgnoringSafeArea(.top)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

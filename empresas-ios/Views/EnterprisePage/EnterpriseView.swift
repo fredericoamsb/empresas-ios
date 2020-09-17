@@ -40,7 +40,7 @@ struct EnterpriseView: View {
                     Spacer()
                         .frame(width: 56)
                 }
-                .frame(height: 92)
+                .frame(height: 100)
                 
                 ZStack {
                     ImageView(withURL: self.photo)
