@@ -13,7 +13,7 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        GeometryReader { view in
+        GeometryReader { (view: GeometryProxy) in
             ZStack {
                 VStack {
                     LoginHeaderView(width: view.size.width)

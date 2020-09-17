@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoadingOverlayView: View {    
     var body: some View {
-        GeometryReader { view in
+        GeometryReader { (view: GeometryProxy) in
             LoadingView()
                 .frame(width: view.size.width, height: view.size.height)
         }

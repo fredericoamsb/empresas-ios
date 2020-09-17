@@ -23,10 +23,11 @@ struct EnterpriseItem: View {
                 .shadow(radius: 3)
         }
         .listRowInsets(EdgeInsets(top: 0, leading: 15, bottom: 8, trailing: 0))
-        .frame(width: self.width - 30, height: 120, alignment: .center)
+        .frame(width: self.width - 30, height: 120)
         .background(Color.init(Theme.gray2))
         .cornerRadius(4)
         .foregroundColor(Color.white)
+        .clipped()
     }
 }
 

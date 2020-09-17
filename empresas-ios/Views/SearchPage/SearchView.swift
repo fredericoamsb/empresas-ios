@@ -13,7 +13,7 @@ struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
-        GeometryReader { view in
+        GeometryReader { (view: GeometryProxy) in
             NavigationView {
                 
                 VStack {
@@ -43,8 +43,13 @@ struct SearchView: View {
                             }
                             
                             Section() {
-                                ForEach(self.viewModel.enterprises as [Enterprise], id: \.self) { enterprise in
-                                    EnterpriseItem(photo: "\(APIConfig.host)\(enterprise.photo)", name: enterprise.name, width: view.size.width)
+                                ForEach(self.viewModel.enterprises as [Enterprise], id: \.self) { (enterprise: Enterprise) in
+                                    NavigationLink(destination: EnterpriseView(photo: "\(APIConfig.host)\(enterprise.photo)", name: enterprise.name, description: enterprise.description!)
+                                        .navigationBarTitle(enterprise.name)
+                                        .navigationBarHidden(true)
+                                    ) {
+                                        EnterpriseItem(photo: "\(APIConfig.host)\(enterprise.photo)", name: enterprise.name, width: view.size.width)
+                                    }
                                 }
                             }
                             
@@ -58,12 +63,9 @@ struct SearchView: View {
                 .onAppear() {
                     UITableView.appearance().separatorStyle = .none
                 }
-                .onDisappear() {
-                    UITableView.appearance().separatorStyle = .singleLine
-                }
+                .edgesIgnoringSafeArea(.top)
             }
         }
-        .edgesIgnoringSafeArea(.top)
     }
 }
 

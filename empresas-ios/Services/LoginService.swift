@@ -33,11 +33,11 @@ class LoginService {
             
             do {
                 let httpResponse = response as! HTTPURLResponse
-                guard let uid = httpResponse.allHeaderFields["uid"] as? String else { return }
-                guard let client = httpResponse.allHeaderFields["client"] as? String else { return }
-                guard let accessToken = httpResponse.allHeaderFields["access-token"] as? String else { return }
+                let uid = httpResponse.allHeaderFields["uid"] as? String
+                let client = httpResponse.allHeaderFields["client"] as? String
+                let accessToken = httpResponse.allHeaderFields["access-token"] as? String
                 
-                LocalStorage.saveSession(dict: ["uid": uid, "client": client, "access-token": accessToken])
+                LocalStorage.saveSession(dict: ["uid": uid, "client": client, "access-token": accessToken] as? [String : String])
                 
                 let responseData: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
                 callback(responseData, nil)

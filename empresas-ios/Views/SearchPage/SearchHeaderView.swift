@@ -49,7 +49,7 @@ struct SearchHeaderView: View {
             .onAppear {
                 NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
                     withAnimation(.easeInOut(duration: 0.2)) {
-                        self.height = 120
+                        self.height = 67
                     }
                 }
                 

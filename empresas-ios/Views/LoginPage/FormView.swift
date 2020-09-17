@@ -15,7 +15,7 @@ struct FormView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
-        GeometryReader { view in
+        GeometryReader { (view: GeometryProxy) in
             VStack {
                 Text("Email")
                     .font(.custom("Rubik Regular", size: 14))
